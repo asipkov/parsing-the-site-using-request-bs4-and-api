@@ -30,13 +30,13 @@ for el in all_cities_id:
     for one_office in values_city:
         if one_office:
             working_hours = one_office['hoursOfOperation']
-            if working_hours['saturday']['isDayOff'] == False and working_hours['sunday']['isDayOff'] == False:
+            if working_hours['saturday']['isDayOff'] is False and working_hours['sunday']['isDayOff'] is False:
                 working_hours_weekend = f'сб {working_hours["saturday"]["startStr"]} до {working_hours["saturday"]["endStr"]}, ' \
                                         f'вс {working_hours["sunday"]["startStr"]} до {working_hours["saturday"]["endStr"]}'
                 if working_hours["saturday"]["startStr"] and working_hours["saturday"]["endStr"] == working_hours["sunday"]["startStr"]\
                         and working_hours["saturday"]["endStr"]:
                     working_hours_weekend = f'сб-вс {working_hours["saturday"]["startStr"]} до {working_hours["saturday"]["endStr"]}'
-            elif working_hours['saturday']['isDayOff'] == False and working_hours['sunday']['isDayOff'] == True:
+            elif working_hours['saturday']['isDayOff'] is False and working_hours['sunday']['isDayOff'] is True:
                 working_hours_weekend = f'сб-вс {working_hours["saturday"]["startStr"]} до {working_hours["saturday"]["endStr"]}'
             else:
                 working_hours_weekend = "сб - вс выходной"
